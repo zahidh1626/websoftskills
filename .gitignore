@@ -1,10 +1,12 @@
 coverage
 dist
 node_modules
+*.[next]
 package-lock.json
 .next
-.next/
+*.next
 *.log
+**/next
 .*
 !*/*.babelrc.js
 !.dockerignore
