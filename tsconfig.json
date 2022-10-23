@@ -34,7 +34,7 @@
     "/src/components/index.ts",
     "src/components/index.ts",
     "src/components/CodeBlock/style.js",
-    "pages/**/*",
+    "src/pages/**/*",
     "src/**/*",
     "src/**/*.ts",
     "src/**/*.tsx",
