@@ -21,17 +21,17 @@ const Home = () => {
 
           <div className='flex justify-center mt-5 flex-wrap '>
             <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-              <span className='text-xl pt-2 block'>Github</span>
+              <span className='text-xl pt-2 block'>Tutorials</span>
             </a>
             <LinkTo href="/pages/about-us.tsx" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-              <span className='text-xl pt-2 block'>About</span>
+              <span className='text-xl pt-2 block'>Code Examples</span>
             </LinkTo>
             <LinkTo href="/pages/tutorial/all-components.tsx" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-              <span className='text-xl pt-2 block'>Components</span>
+              <span className='text-xl pt-2 block'>Templates</span>
             </LinkTo>
 
             <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-              <span className='text-xl pt-2 block'>Support Us</span>
+              <span className='text-xl pt-2 block'>Exercises</span>
             </a>
           </div>
         </div>
