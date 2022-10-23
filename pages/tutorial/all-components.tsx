@@ -89,19 +89,91 @@ const AllComponents = () => {
       component: "Video Player",
       href: "#videoPlayer",
     },
+    {
+      component: "Page Layouts",
+      href: "#pageLayouts",
+    },
+    {
+      component: "Text",
+      href: "#text",
+    },
+    {
+      component: "Image",
+      href: "#image",
+    },
+    {
+      component: "List",
+      href: "#list",
+    },
+    {
+      component: "Section seperator",
+      href: "#seperator",
+    },
+    {
+      component: "LinkTo",
+      href: "#linkto",
+    },
+    {
+      component: "Image Slider",
+      href: "#imageslider",
+    },
+    {
+      component: "Accordian",
+      href: "#accordian",
+    },
+    {
+      component: "Video Player",
+      href: "#videoPlayer",
+    },
+    {
+      component: "Page Layouts",
+      href: "#pageLayouts",
+    },
+    {
+      component: "Text",
+      href: "#text",
+    },
+    {
+      component: "Image",
+      href: "#image",
+    },
+    {
+      component: "List",
+      href: "#list",
+    },
+    {
+      component: "Section seperator",
+      href: "#seperator",
+    },
+    {
+      component: "LinkTo",
+      href: "#linkto",
+    },
+    {
+      component: "Image Slider",
+      href: "#imageslider",
+    },
+    {
+      component: "Accordian",
+      href: "#accordian",
+    },
+    {
+      component: "Video Player",
+      href: "#videoPlayer",
+    },
   ];
 
   const sideBtnsComponents = () => {
     return sideBtns.map((each: any, i: any) => (
       <div key={each.component + i}>
         {each.types ? (
-          <p className="text-xl font-semibold mb-3">{each.component}</p>
+          <p className="text-sm font-semibold mb-3">{each.component}</p>
         ) : (
           <LinkTo
             href={each.href}
             key={each.href}
             className={combineClasses(
-              "md:text-xl text-md font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5",
+              "md:text-sm text-sm font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5",
               isActive(each.href) && "text-blue-500"
             )}
           >
@@ -140,8 +212,8 @@ const AllComponents = () => {
             List of all components, its types and how to use it.
           </Text>
         </div>
-
-        <div className="flex md:flex-nowrap flex-wrap relative items-start mt-8">
+        <div className="h-[200px] bg-gray-100 border"></div>
+        <div className="flex md:flex-nowrap flex-wrap relative items-start mt-8  w-full">
           {/* side btns */}
           <aside className="md:w-1/5 w-full md:sticky md:top-[90px] ">
             <div className="md:rounded-lg md:p-3 md:block px-2 py-3 md:pb-0 bg-white dark:bg-slate-800 shadow-md mb-5 flex overflow-auto">
@@ -161,7 +233,7 @@ const AllComponents = () => {
           </aside>
 
           {/* components */}
-          <aside className="md:w-4/5 w-full md:px-[15px]">
+          <div className="md:w-3/5 w-full md:px-[15px]">
             <section className={cardBBorder} id="pageLayouts">
               <Text
                 subtitle
@@ -412,6 +484,29 @@ const AllComponents = () => {
                 </a>
                 .
               </Text>
+            </div>
+          </div>
+          <aside className="md:w-1/5 w-full md:sticky md:top-[90px] ">
+            <div className="md:rounded-lg md:p-3 md:block px-2 py-3 md:pb-0 bg-white dark:bg-slate-800 shadow-md mb-5 flex overflow-auto">
+              {sideBtnsComponents()}
+              <LinkTo
+                href="/pages/tutorial/style-guide.tsx"
+                className="md:hidden block whitespace-nowrap font-semibold"
+              >
+                Style Guide
+              </LinkTo>
+            </div>
+            <div className="md:rounded-lg md:p-3 bg-white dark:bg-slate-800 shadow-md overflow-auto md:text-xl text-md font-semibold whitespace-nowrap md:block hidden">
+              <LinkTo href="/pages/tutorial/style-guide.tsx">
+                Style Guide
+              </LinkTo>
+            </div>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic unde
+              esse amet laborum excepturi. Beatae, quod, assumenda possimus
+              inventore deleniti cum temporibus maxime voluptatum tenetur error
+              autem reprehenderit odit, sed magnam? Quidem, officia tempora,
+              rerum, eaque enim atque reprehenderit nam perferendis dicta
             </div>
           </aside>
         </div>
