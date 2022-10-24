@@ -13,12 +13,12 @@ const Home = () => {
       <section className="w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200">
         <div className="container text-center px-3">
           <Text title className="text-3xl">
-            Blog template using Next Js, Typescript and Taildwind CSS
+            Websoftskills is a social platform where anyone can learn to code
           </Text>
 
           <Text p className="mt-3 text-xl">
-            This is a simple and static component based blog template for
-            everyone.
+            The Best Online Coding Classes and Programs to Learn to Code for Free
+
           </Text>
 
           <div className="flex justify-center mt-5 flex-wrap ">
@@ -30,7 +30,7 @@ const Home = () => {
               <span className="text-xl pt-2 block">Tutorials</span>
             </LinkTo>
             <LinkTo
-              href="/pages/about-us.tsx"
+              href="/pages/tutorial/blog-with-sidebar-layout.tsx"
               passHref
               className="flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2"
             >

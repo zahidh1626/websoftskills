@@ -114,7 +114,7 @@ const ARTICLES_LIST: iArticle[] = [
     preview: {
       author: MAYUR,
       date: "August 14 2022",
-      articleTitle: "Page Layout for a article with sidebar",
+      articleTitle: "Page Layout article with sidebar",
       tags: "demo, with sidebar, default layout",
       thumbnail: "/public/imp_assets/tutorials/blog-with-sidebar-layout.svg",
       shortIntro:
