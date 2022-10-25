@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const tailwind = {
-  darkMode: ['class'],
+  darkMode: ["class"],
   // purge: ['./src/**/*.{js,ts,jsx,tsx}', "./pages/**/*.{js,ts,jsx,tsx}"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -12,17 +12,17 @@ const tailwind = {
     container: {
       center: true,
       screens: {
-        lg: '960px',
-        xl: '1140px',
-        '2xl': '1200px',
+        lg: "960px",
+        xl: "1240px",
+        "2xl": "1500px",
       },
-      padding: '15px'
+      padding: "15px",
     },
     typography: (theme) => ({}),
     extend: {},
   },
   variants: {},
-  plugins: [require('@tailwindcss/typography')],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
 
-module.exports = tailwind
+module.exports = tailwind;
