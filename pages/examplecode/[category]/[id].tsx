@@ -9,10 +9,10 @@ import {
     List,
     Accordian,
     VideoPlayer,
-} from "../src/components";
-import { ListType, ImageSize } from "../src/shared/enums";
-import { combineClasses } from "../src/utils/utils";
-import CodeBlock from "../src/components/CodeBlock";
+} from "../../../src/components";
+import { ListType, ImageSize } from "../../../src/shared/enums";
+import { combineClasses } from "../../../src/utils/utils";
+import CodeBlock from "../../../src/components/CodeBlock";
 import {
     HowToUseList,
     HowToUseSeperator,
@@ -23,9 +23,10 @@ import {
     HowToUseSlider,
     HowToUseAccordian,
     HowToUseVideo,
-} from "../src/constants/codeBlocks";
-import img from "../public/images/og-image.jpg"
-import FeaturedArticle from "../src/components/ArticleCards/FeaturedArticle";
+} from "../../../src/constants/codeBlocks";
+import img from "../../../public/images/og-image.jpg"
+import FeaturedArticle from "../../../src/components/ArticleCards/FeaturedArticle";
+import axios from "axios";
 interface iSideBtnLinks {
     component: string;
     types?: {
@@ -35,7 +36,8 @@ interface iSideBtnLinks {
     href?: string;
 }
 
-const AllComponents = () => {
+const CodeExample = ({ categories, posts, test }: any) => {
+    console.log(posts, "test")
     const router = useRouter();
     const routerIncludesHash = router.asPath.includes("#");
     const [activeHash, setActiveHash] = useState("");
@@ -134,38 +136,24 @@ const AllComponents = () => {
         }
     ]
     const sideBtnsComponents = () => {
-        return sideBtns.map((each: any, i: any) => (
-            <div key={each.component + i}>
-                {each.types ? (
-                    <p className="text-xl font-semibold mb-3">{each.component}</p>
-                ) : (
-                    <LinkTo
-                        href={each.href}
-                        key={each.href}
-                        className={combineClasses(
-                            "md:text-xl text-md font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5",
-                            isActive(each.href) && "text-blue-500"
-                        )}
-                    >
-                        {each.component}
-                    </LinkTo>
-                )}
-                <div className="mb-3">
-                    {each.types &&
-                        each.types.map((each: any) => (
-                            <LinkTo
-                                href={each.href}
-                                key={each.href}
-                                className={combineClasses(
-                                    "block text-gray-500 font-medium py-1 pl-3 border-l",
-                                    isActive(each.href) &&
-                                    "text-blue-500 border-blue-500 border-l-2"
-                                )}
-                            >
-                                {each.label}
-                            </LinkTo>
-                        ))}
-                </div>
+        return categories.map((category: any, i: any) => (
+            <div key={category.id}>
+                <LinkTo
+                    href={`/examplecode/${category.slug}/${category.id}`}
+                    key={category.href}
+                    className={combineClasses(
+                        "md:text-lg text-md font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5 items-center",
+                        isActive(category.href) && "text-blue-500"
+                    )}
+                >
+
+                    {(
+                        <div className="flex justify-between items-center">
+                            <div>{category.name}</div>
+                            <div className=" border rounded-xl w-5 h-5 text-sm flex justify-center items-center">{category.count}</div>
+                        </div>
+                    )}
+                </LinkTo>
             </div>
         ));
     };
@@ -192,9 +180,9 @@ const AllComponents = () => {
                         <section className={""} id="pageLayouts">
                             <div>
                                 {
-                                    projects.map((item) => (
+                                    posts.map((item: any) => (
                                         <div key={item.id} className={"m-10"}>
-                                            <FeaturedArticle article={item} path={item.path} key={item.id} />
+                                            <FeaturedArticle article={item} path={item.links} key={item.id} />
                                         </div>
                                     ))
                                 }
@@ -241,4 +229,25 @@ const AllComponents = () => {
     );
 };
 
-export default AllComponents;
+export default CodeExample;
+export async function getStaticPaths() {
+    return {
+        // Only `/posts/1` and `/posts/2` are generated at build time
+        paths: [{ params: { category: "javascript", id: "86" } }],
+        // Enable statically generating additional pages
+        // For example: `/posts/3`
+        fallback: false,
+    };
+}
+
+export async function getStaticProps({ params }: any) {
+    console.log(params.id, "hello")
+    const categories = await axios.get("https://websoftskills.com/wp-json/wp/v2/categories?_fields=id,name,count,slug");
+    const posts = await axios.get(`https://websoftskills.com/wp-json/wp/v2/posts?categories=${params.id}`);
+
+    // const json = await res.json();
+    return {
+        props: { categories: categories.data, posts: posts.data, },
+    };
+}
+

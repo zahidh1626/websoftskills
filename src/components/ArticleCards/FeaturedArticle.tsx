@@ -30,7 +30,7 @@ const FeaturedArticle = ({ article }: any) => {
                     {/* style={{ background: `url(${transformImagePaths(article.thumbnail)})` }} */}
 
                     <img
-                        src="https://thumbs.dreamstime.com/b/rainbow-love-heart-background-red-wood-60045149.jpg" alt={article.articleTitle}
+                        src="https://thumbs.dreamstime.com/b/rainbow-love-heart-background-red-wood-60045149.jpg" alt={article.slug}
                         className="w-full h-full object-cover" />
                 </div>
                 <div className={'w-full md:w-[55%] lg:px-[50px] px-[15px] lg:py-[40px] py-[20px] md:border-r-[5px]  border-blue-500'}>
@@ -41,18 +41,18 @@ const FeaturedArticle = ({ article }: any) => {
                                 href={"/blog?author="}
                                 passHref
                                 className={combineClasses(classes.author_name, 'text-[14px] md:text-[16px] my-0 font-medium')}>
-                                {article?.author?.name}
+                                {article?.slug}
                             </LinkTo>
                         </div>
                         <ArticleCardCategory category={article.category} />
                     </div>
                     <LinkTo href={"/"} passHref>
                         <h1 className={combineClasses(classes.featured_article__title, "text-[24px] font-bold mt-0 mb-[10px]")} >
-                            {article.articleTitle}
+                            {article.title["rendered"]}
                         </h1>
                     </LinkTo>
                     <p className={combineClasses(classes.featured_article__intro, "text-[14px] font-regular mt-0 mb-[10px]")}>
-                        {article.disc} ...
+                        {article.yoast_head_json.description} ...
                     </p>
                     {/* <ArticleTags tags={article?.tags} /> */}
                     <p className={combineClasses(classes.featured_article__date, "font-normal text-xs pt-3 mb-0")}>{article.date}</p>
