@@ -236,7 +236,7 @@ export async function getStaticPaths() {
         paths: [{ params: { category: "javascript", id: "86" } }],
         // Enable statically generating additional pages
         // For example: `/posts/3`
-        fallback: true,
+        fallback: false,
     };
 }
 
