@@ -233,7 +233,7 @@ export default CodeExample;
 export async function getStaticPaths() {
     return {
         // Only `/posts/1` and `/posts/2` are generated at build time
-        paths: [{ params: { category: "javascript", id: "3" } }],
+        paths: [{ params: { category: "javascript", id: "86" } }],
         // Enable statically generating additional pages
         // For example: `/posts/3`
         fallback: true,
