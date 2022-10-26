@@ -30,14 +30,14 @@ const Home = () => {
               <span className="text-xl pt-2 block">Tutorials</span>
             </LinkTo>
             <LinkTo
-              href="/pages/tutorial/blog-with-sidebar-layout.tsx"
+              href="/examplecode/javascript/86"
               passHref
               className="flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2"
             >
               <span className="text-xl pt-2 block">Code Examples</span>
             </LinkTo>
             <LinkTo
-              href="/pages/tutorial/all-components.tsx"
+              href="/examplecode/javascript/86"
               passHref
               className="flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2"
             >
@@ -57,7 +57,7 @@ const Home = () => {
       </section>
       <div className="container mx-auto lg:px-[15px] px-0">
         <div className={"flex flex-wrap"}>
-          <FeaturedArticleSection />
+          {/* <FeaturedArticleSection /> */}
           <h1 className="px-3 w-full mb-5 text-xl md:text-3xl font-medium">
             Checkout the below articles on how to use different layouts and
             components
