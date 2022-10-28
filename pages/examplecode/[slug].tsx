@@ -41,7 +41,6 @@ const Article = ({ categories, posts }: any) => {
   const [activeHash, setActiveHash] = useState("");
   const cardBBorder =
     "border-b-[8px] border-blue-500 bg-white dark:bg-slate-800 shadow-md md:rounded-lg px-3 pb-2 pt-1 mb-8";
-  console.log(posts, "posts");
   useEffect(() => {
     if (routerIncludesHash) {
       const split = router.asPath.split("#");
@@ -74,9 +73,7 @@ const Article = ({ categories, posts }: any) => {
         </LinkTo>
       </div>
     ));
-  };
-
-  return (
+  };  return (
     <PageLayout>
       <section className="container md:pt-10 pt-20 px-0 md:px-[15px]">
         <div className="md:px-0 px-3">
@@ -95,19 +92,20 @@ const Article = ({ categories, posts }: any) => {
           {/* components */}
           <article className="md:w-4/5 w-full md:px-[15px]">
             <div className="px-4 py-3 dark:bg-slate-800 bg-white rounded mx-2 shadow-xl">
-            <div className="h-[400px]">
-            <img
-              src={
-                posts._embedded["wp:featuredmedia"]
-                  ? posts._embedded["wp:featuredmedia"][0].media_details.sizes
-                      .thumbnail.source_url
-                  : "https://osbornegroupcre.com/wp-content/uploads/2016/02/missing-image-640x360.png"
-              }
-              alt={posts.slug}
-              className="h-full w-full"
-            />
-          </div>
-              <div className="testingContent"
+              <div className="h-">
+                {/* <img
+                  src={
+                    posts?._embedded["wp:featuredmedia"]
+                      ? posts._embedded["wp:featuredmedia"][0].media_details
+                          .sizes.thumbnail.source_url
+                      : "https://osbornegroupcre.com/wp-content/uploads/2016/02/missing-image-640x360.png"
+                  }
+                  alt={posts.slug}
+                  className="h-full w-full"
+                /> */}
+              </div>
+              <div
+                className="testingContent"
                 dangerouslySetInnerHTML={{
                   __html: posts["content"]["rendered"],
                 }}
@@ -132,23 +130,22 @@ const Article = ({ categories, posts }: any) => {
 
 export default Article;
 export async function getStaticPaths() {
+  const posts = await axios.get(
+    "https://websoftskills.com/wp-json/wp/v2/posts?_fields=slug&per_page=100"
+  );
   return {
-    // Only `/posts/1` and `/posts/2` are generated at build time
-    paths: [
-      {
+    paths: posts.data.map((article: any) => {
+      return {
         params: {
-          slug: "how-to-build-a-fully-functionality-javascript-calculator-calculator-using-javascript",
+          slug: article.slug,
         },
-      },
-    ],
-    // Enable statically generating additional pages
-    // For example: `/posts/3`
-    fallback: true,
+      };
+    }),
+    fallback: false,
   };
 }
 
 export async function getStaticProps({ params }: any) {
-  console.log(params.id, "hello");
   const categories = await axios.get(
     "https://websoftskills.com/wp-json/wp/v2/categories?_fields=id,name,count,slug"
   );

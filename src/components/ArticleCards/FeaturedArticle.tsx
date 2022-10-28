@@ -12,6 +12,7 @@ import ArticleCardCategory from "../Misc/ArticleCardCategory";
 import ArticleTags from "../Misc/ArticleTags";
 import path from "path";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface IProp {
   article: IArticleHeaderData;
@@ -19,12 +20,17 @@ interface IProp {
 }
 
 const FeaturedArticle = ({ article }: any) => {
+  const [isFeatureMedia, setIsFeatureMedia] = useState(false);
   const router = useRouter();
   const gotoPath = (e: any) => {
     e.preventDefault();
     router.push("/");
   };
-
+  useEffect(() => {
+    if (article && "wp:featuredmedia" in article._embedded) {
+      setIsFeatureMedia(true);
+    }
+  }, [article]);
   return (
     <>
       <div
@@ -44,13 +50,12 @@ const FeaturedArticle = ({ article }: any) => {
           <div className="bg-gray-200 h-full w-[500px] absolute">
             <Image
               src={
-                article._embedded["wp:featuredmedia"]
-                  ? article._embedded["wp:featuredmedia"][0].media_details.sizes
-                      .thumbnail.source_url
+                isFeatureMedia
+                  ? article._embedded["wp:featuredmedia"][0].source_url
                   : "https://osbornegroupcre.com/wp-content/uploads/2016/02/missing-image-640x360.png"
               }
               alt={article.slug}
-            layout="fill"
+              layout="fill"
             />
           </div>
         </div>

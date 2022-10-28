@@ -94,7 +94,7 @@ hr {
     &.disabled {
       @apply pointer-events-none bg-gray-500;
     }
-    h2{
+    h2 {
       background-color: rebeccapurple !important;
     }
   }
@@ -121,7 +121,6 @@ hr {
       transform: translateX(-50%);
       display: none;
     }
-
     &.active {
       &::before {
         display: block;
@@ -130,8 +129,20 @@ hr {
   }
 }
 
-.testingContent h2{
+.testingContent h2 {
   font-size: 30px;
   font-weight: bold;
   padding: 20px 0px;
+}
+.testingContent h2 a {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px 0px;
+  color: blue;
+}
+
+.testingContent pre{
+  overflow: scroll;
+background-color: gainsboro;
+height: 300px;
 }
