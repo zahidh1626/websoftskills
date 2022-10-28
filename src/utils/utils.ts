@@ -141,7 +141,7 @@ export const transformPath = (path = ""): string => {
  * @returns string
  */
 export const transformImagePaths = (path = ""): string => {
-  return path.replace("/public", "");
+  return path?.replace("/public", "");
 };
 
 /**
