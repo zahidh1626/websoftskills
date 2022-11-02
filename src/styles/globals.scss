@@ -129,20 +129,41 @@ hr {
   }
 }
 
-.testingContent h2 {
+.projectArticleContent h2 {
   font-size: 30px;
   font-weight: bold;
-  padding: 20px 0px;
+  padding: 20px 0px 0px 0px;
 }
-.testingContent h2 a {
+.projectArticleContent h2 a {
   font-size: 30px;
   font-weight: bold;
   padding: 20px 0px;
+  color: lightblue;
+}
+.projectArticleContent h3 a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 0px;
+  color: lightblue;
+}
+.projectArticleContent h2,
+h3 a:hover {
   color: blue;
 }
-
-.testingContent pre{
+.projectArticleContent {
+  font-family: "Open Sans", sans-serif;
+}
+.projectArticleContent p {
+  margin: 10px 0px;
+}
+.projectArticleContent pre {
   overflow: scroll;
-background-color: gainsboro;
-height: 300px;
+  background-color: gainsboro;
+  height: 300px;
+}
+.projectArticleContent p a {
+  color: lightskyblue;
+}
+.projectArticleContent p a:hover {
+  color: blue;
 }

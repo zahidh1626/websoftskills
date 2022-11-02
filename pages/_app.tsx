@@ -2,7 +2,7 @@ import '../src/styles/globals.scss'
 
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-
+import { Analytics } from '@vercel/analytics/react';
 import { NextSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
@@ -67,6 +67,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
       <ThemeProvider enableSystem={true} attribute="class">
         <Component {...pageProps} />
+        <Analytics />
         <Footer />
       </ThemeProvider>
     </>
