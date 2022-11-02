@@ -105,7 +105,7 @@ const Article = ({ categories, posts }: any) => {
                 /> */}
               </div>
               <div
-                className="testingContent"
+                className="projectArticleContent"
                 dangerouslySetInnerHTML={{
                   __html: posts["content"]["rendered"],
                 }}
