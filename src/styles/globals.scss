@@ -94,8 +94,18 @@ hr {
     &.disabled {
       @apply pointer-events-none bg-gray-500;
     }
+    h2 {
+      background-color: rebeccapurple !important;
+    }
   }
-
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    color: #333;
+    background-color: rebeccapurple;
+  }
   li {
     margin: 0px 10px;
     position: relative;
@@ -111,11 +121,49 @@ hr {
       transform: translateX(-50%);
       display: none;
     }
-
-    &.active{
+    &.active {
       &::before {
         display: block;
       }
     }
   }
+}
+
+.projectArticleContent h2 {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px 0px 0px 0px;
+}
+.projectArticleContent h2 a {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px 0px;
+  color: lightblue;
+}
+.projectArticleContent h3 a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 0px;
+  color: lightblue;
+}
+.projectArticleContent h2,
+h3 a:hover {
+  color: blue;
+}
+.projectArticleContent {
+  font-family: "Open Sans", sans-serif;
+}
+.projectArticleContent p {
+  margin: 10px 0px;
+}
+.projectArticleContent pre {
+  overflow: scroll;
+  background-color: gainsboro;
+  height: 300px;
+}
+.projectArticleContent p a {
+  color: lightskyblue;
+}
+.projectArticleContent p a:hover {
+  color: blue;
 }

@@ -10,7 +10,7 @@ const TermsAndConditions = () => {
         description: `These terms and conditions outline the rules and regulations for the use of Website, located at ${WEBSITE_URL}.`,
         keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
         author: 'Mayur Nalwala, Rupali Yadav'
-    }    
+    }
     return (
         <PageLayout PAGE_SEO={PAGE_SEO} home>
             <div className='container px-3 pb-[20px] mt-10 pt-14 md:pt-0'>
