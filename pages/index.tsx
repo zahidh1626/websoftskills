@@ -6,6 +6,7 @@ import { DEFAULT_SEO } from "../BLOG_CONSTANTS/_BLOG_SETUP";
 import FeaturedArticleSection from "../src/components/Misc/FeaturedArticleSection";
 import HomeNonFeatureArticles from "../src/components/Misc/HomeNonFeatureAricles";
 import Link from "next/link";
+import ArticleCardDevs from "../src/components/Misc/ArticleCardDevs";
 
 const Home = () => {
   return (
@@ -17,8 +18,8 @@ const Home = () => {
           </Text>
 
           <Text p className="mt-3 text-xl">
-            The Best Online Coding Classes and Programs to Learn to Code for Free
-
+            The Best Online Coding Classes and Programs to Learn to Code for
+            Free
           </Text>
 
           <div className="flex justify-center mt-5 flex-wrap ">
@@ -64,6 +65,9 @@ const Home = () => {
           </h1>
           <hr className="border-1 mb-5 w-[98%] mx-auto" />
           <HomeNonFeatureArticles />
+        </div>
+        <div className="py-12">
+          <ArticleCardDevs />
         </div>
       </div>
     </PageLayout>
